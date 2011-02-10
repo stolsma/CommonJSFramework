@@ -1,0 +1,372 @@
+html {
+}
+
+body {
+}
+
+/* start loading indicator layout */
+#loading {
+	position:absolute;
+	left:45%;
+	top:40%;
+	padding:2px;
+	z-index:20001;
+    height:auto;
+	border: 1px black double;
+}
+#loading img {
+    margin-bottom:5px;
+}
+#loading .loading-indicator{
+	background:white;
+	color:#555;
+	font:bold 13px tahoma,arial,helvetica;
+	padding:10px;
+	margin:0;
+    text-align:center;
+    height:auto;
+}
+/* einde loading indicator layout */
+
+/*
+ * Onderstaande is de algemene opmaak van de Container ruimte
+ **/
+#Container {
+	border: 0px none #000000;
+	margin-left: auto;
+	margin-right: auto;
+	z-index: 0;
+	background-image: url(/Images/Sides1024.jpg);
+	background-repeat: repeat-y;
+	background-position:center;
+}
+
+.app1024 #Container {
+	width: 1033px;
+}
+
+/*
+ * Onderstaande is de algemene opmaak van de PageHeader ruimte
+ **/
+#PageHeader {
+	margin: 0px 15px 0px 15px;
+}
+
+/*
+ * Onderstaande is de algemene opmaak van de Kop ruimte
+ **/
+#PageHeader #Kop {
+	background-repeat: no-repeat;
+	margin: 0px auto auto auto;
+	padding: 0px;
+	height:150px;
+	border: 0px none #000000;
+	z-index: 1;
+}
+
+.app1024 #PageHeader #Kop{
+	width: 1003px; /*	width: 766px; 980 */
+	background-image: url(/randompic.php?pagesize=1024);
+}
+
+/*
+ * Onderstaande is de algemene opmaak van de Titel ruimte
+ **/
+#PageHeader #Titel {
+	margin-left: 40px;   /* Waar links vanaf starten */
+	width: 850px;        /* Breedte van de Titel div */
+	position:absolute;
+	margin-top: -150px;
+	height: 60px;
+	padding: 0px 0px 0px 0px;
+	z-index: 2;
+	text-align: center;
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 57px;
+	font-style: italic;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #FF0000;
+}
+
+.app1024 #PageHeader #Titel{
+	margin-left: 10px;   /* Waar links vanaf starten */
+	width: 900px;        /* Breedte van de Titel div */
+	margin-top: -150px;
+	height: 60px;
+}
+
+.Titeladd {
+	font-size: 24px;
+}
+
+/*
+ * Onderstaande is de algemene opmaak van de Subkop ruimte
+ **/
+#PageHeader #Subkop {
+	margin-left: 100px;   /* Waar links vanaf starten */
+	width: 500px;         /* Breedte van de Subkop div */
+	position:absolute;
+	margin-top: -70px;
+	height: 44px;
+	padding: 0px 0px 0px 0px;
+	z-index: 2;
+	text-align: center;
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	font-style: italic;
+	font-weight: bold;
+	font-variant: normal;
+	text-transform: none;
+	color: #FF0000;
+}
+
+.app1024 #PageHeader #Subkop{
+	margin-left: 100px;   /* Waar links vanaf starten */
+	width: 500px;         /* Breedte van de Subkop div */
+	margin-top: -70px;
+	height: 44px;
+}
+
+.app1024 #PageHeader #ScreenSize{
+	margin-top: -148px;
+	margin-left: 3px;
+	width: 140px;
+	height: 44px;
+}
+
+/*
+ * Onderstaande is de algemene opmaak van de loginStatus ruimte
+ **/
+#PageHeader #loginStatus{
+	position:absolute;
+	width: 300px;
+	height: 14px;
+	margin: -20px 0px 0px 680px;
+	padding: 2px 2px 2px 2px;
+	z-index: 2;
+	text-align: right;
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-variant: normal;
+	text-transform: none;
+	color: #2F0057;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+/*
+ * Onderstaande is de algemene opmaak van de menu ruimte
+ **/
+#PageHeader #Menu {						/* waar moet de menu div komen te staan ?? */
+	margin-left: 33px;   /* Waar links vanaf starten */
+	width: 920px;        /* Breedte van de Menu div */
+	position:absolute;
+    margin-top: -18px; 
+    height: 19px;
+	padding: 0px 0px 0px 0px;
+	z-index: 2;
+}
+
+.app1024 #PageHeader #Menu{						/* waar moet de menu div komen te staan ?? */
+	margin-left: 18px;   /* Waar links vanaf starten */
+	width: 920px;        /* Breedte van de Menu div */
+    margin-top: -23px; 
+}
+
+#nav, #nav ul.menu { /* all lists */
+	text-transform: none;
+	text-decoration: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+#nav a {			/* voor alle <a> items in alle dropdown lists (op alle niveau's) deze opmaak */
+	display: block;
+	text-transform: none;
+	text-decoration: none;
+	color: #FF0000;
+}
+
+#nav li.menu { /* all list items of the horizontal first row*/
+	float: left;
+	width: auto;
+	margin-left: 5px;
+	margin-right: 5px;
+    margin-top: 0px;
+    margin-bottom: -1px;
+	list-style-type:none;
+	text-align: left;
+	cursor: default;
+}
+
+#nav li.menu a:hover {			/* Wat doet de main menu regel als er overheen gehoverd wordt */
+	color: #993300;
+	font-weight: bold;
+}
+
+#nav li.menu li a:hover {			/* Wat doen de andere menu regels als er overheen gehoverd wordt */
+	color: #FF0000;
+	font-weight: normal;
+}
+
+#submenu {						/* Extra Beschrijving van de main menu line die niet op andere regels mag terugkomen*/
+	width: auto; 				/* breedte van de main menu items  4em */
+	text-align: Center;
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 16px;		
+	font-style: normal;
+	font-weight: bolder;
+	font-variant: normal;
+	text-transform: none;
+	color: #FF0000;
+	text-decoration: none;
+    border: none 1px #000000;
+}
+
+#nav li.menu li.menu{ /* all list items after the horizontal first row*/
+	float: left;
+	position: relative;
+	width: 150px;			/* Breedte dropdown box zie ook onderstaande li.menu ul.menu width !!!! */
+	padding: 3px 3px 3px 3px; 
+	text-align: left;
+	cursor: default;
+	background-color: #CCCCCC;
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	border-right-style: solid;
+	border-right-color: #000000;
+	border-right-width: 1px;
+	border-left-color: #000000;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-bottom-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-top-color: #000000;
+	border-top-style: solid;
+	border-top-width: 1px;
+    margin-top: 0px;
+    margin-bottom: -1px;
+	margin-left: 0px;
+	margin-right: 0px;
+	list-style-type:none;
+}
+
+#nav li.menu ul { /* second-level lists */
+	position: absolute;
+	left: -999em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
+    width: 150px;         
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #FF0000;
+}
+
+#nav li.menu ul ul { /* third-and-above-level lists */
+	margin: -19px 0 0 153px;
+}
+
+/* Als de hoover uit de weg is dan weer helemaal links neerzetten*/
+#nav li:hover ul ul, #nav li:hover ul ul ul, #nav li.sfhover ul ul, #nav li.sfhover ul ul ul {
+	left: -999em;
+}
+
+/* Als de hoover aan gaat dan op de goede plek neerzetten*/
+#nav li:hover ul, #nav li li:hover ul, #nav li li li:hover ul, #nav li.sfhover ul, #nav li li.sfhover ul, #nav li li li.sfhover ul { /* lists nested under hovered list items */
+	left: auto;
+}
+
+/* De regel waarover gehoovered wordt donkerder grijs maken*/
+#nav li.menu li:hover, #nav li.menu li li:hover, #nav li.menu li.sfhover, #nav li.menu li li.sfhover {
+	background-color: #999999;
+}
+
+/*
+ * Onderstaande is de algemene opmaak van de contentruimte
+ **/
+#PageContent {
+	margin: 0px 15px 0px 15px;
+	padding: 0px 0px 0px 0px;
+/*	background-color: #E9E9E9;
+*/	z-index: 2;
+}
+
+.app1024 #PageContent {
+}
+
+#PageContent a:link, a:visited { /* De opmaak van linken in de contentgedeelte van de pagina die nog niet bezocht zijn en die wel bezocht zijn.*/
+	font-weight: bold;
+	text-decoration: none;
+	color: #933;
+}
+
+/*
+ * Onderstaande zijn Footer opmaak items
+ **/
+#Footer {
+	background-color: #E9E9E9;
+	background-position: bottom;
+	clear: both;
+	padding: 5px 0px 0px 0px;
+	margin: 0px auto 0px auto;
+	position: static;
+	border: 0px none #000000;
+	width: 100%; /* 1003-3 voor de rechter ruimte*/
+	height: 40px;
+	z-index: 0;
+}
+
+.app1024 #Footer {
+/*	width: 100%; /* 1003-3 voor de rechter ruimte*/
+	background-image: url(/Images/Footer1024.jpg);
+}
+
+.FooterAlgemeen{
+	width: 350px;
+	padding: 1px 0px 0px 0px;
+	margin: 0px auto 0px auto;
+}
+
+.FooterItem{
+	float: left;
+	padding: 0px 10px 0px 10px;
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #993333;
+	text-decoration: none;
+	line-height: normal;
+}
+
+.copyright {
+	padding: 0px 10px 0px 10px;
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8px;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #993333;
+	text-decoration: none;
+	line-height: normal;
+	text-align:center;
+}
+
+#Footer a {			/* voor alle <a> items in de footer deze opmaak */
+	display: block;
+	text-transform: none;
+	text-decoration: none;
+	color: #993333;
+}
