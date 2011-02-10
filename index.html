@@ -4,6 +4,7 @@
 <head>
 	<title>Tolsma Telematica Consultancy</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<link href="ext-all.css" rel="stylesheet" type="text/css" />
 	<link href="Global.css" rel="stylesheet" type="text/css" />
 	<link href="Specific.css" rel="stylesheet" type="text/css" />
 </head>
@@ -52,8 +53,8 @@
 			</ul>
 			<p>To get order in the chaos the CommonJS Reference Framework is defined which describes the interaction between the basic CommonJS  layers:</p>
 			<div style="width: 650px; height: 356px; margin: 0px auto 0px auto;" >
-<a href="CommonJS Environment Framework v0.5.png" target="_new">
-					<img src="CommonJS Environment Framework v0.5.png" width="650" height="356" align="middle" />
+<a href="images/CommonJS Environment Framework v0.5.png" target="_new">
+					<img src="images/CommonJS Environment Framework v0.5.png" width="650" height="356" align="middle" />
 				</a>
 			</div>
 			<br />
@@ -66,20 +67,20 @@
 			<p>In the next chapters the high level use of those layers will be described.</p>
 			
 			<h1>Core CommonJS System Layer</h1>
-			<div style="float:right; overflow:auto; margin: 10px 0px 10px 10px;"><a href="Core CommonJS Layer v0.5.png" target="_new"><img src="Core CommonJS Layer v0.5.png" width="200" height="181" longdesc="Layer 1 in the Architecture" /></a></div>
+			<div style="float:right; overflow:auto; margin: 10px 0px 10px 10px;"><a href="images/Core CommonJS Layer v0.5.png" target="_new"><img src="images/Core CommonJS Layer v0.5.png" width="200" height="181" longdesc="Layer 1 in the Architecture" /></a></div>
 			<p>This is the basic CommonJS layer with stores for Module, Package and Context definitions and functions for manipulating those stores and the host environment. The total CommonJS Environment consists of an ECMAScript execution environment embedded in an application such as a web browser or scripting host, known as the host environment. In an addition to the ECMAScript interpreter, the CommonJS environment provides a facility for loading and executing ECMAScript known as the CommonJS module and package system, and bootstrapping facilities that allow us to initialize and execute CommonJS scripts.</p>
 			<p>In this layer several specific subsystems can be defined, depending on the required level of implementation of CommonJS core elements (Module, Package, Context). Those subsystems work together as a sort of Matryoshka doll. The lowest level of implementation of the CommonJS System Layer is the implementation of the Module System. The second level is the use of Packages to group modules in 'package environments' for easy deployability and shareability. The last layer is the use of Contexts to be able to implement separate module/package environments in one host </p>
 			<p class="EditorNote">The notion of Context is not yet defined or even discussed in the CommonJS group!! Just defined to show how easy it can be to add new functionality to the Core System Layer.</p>
 			
 			<p>The relation between the host environment and the core CommonJS elements are depicted in the next image:</p>
-			<div style="width: 650px; height: 395px; margin: 5px auto 5px auto;" > <a href="Relation between Context Package and Module v0.5.png" target="_new"><img src="Relation between Context Package and Module v0.5.png" width="650" height="395" /></a>
+			<div style="width: 650px; height: 395px; margin: 5px auto 5px auto;" > <a href="images/Relation between Context Package and Module v0.5.png" target="_new"><img src="images/Relation between Context Package and Module v0.5.png" width="650" height="395" /></a>
 			</div>
 			
 			<p class="EditorNote">Add distinction that in the same context environment module exports of the same module in the same package are identical. This is not the case between module exports of the same package in another context environment!! So between context environments only the Factory Function is reused not the created exports!! </p>
 			
 			
 			<p>If we look at implementing those core elements in the Core Systems Layer we get the following picture:</p>
-			<div style="width: 650px; height: 461px; margin: 5px auto 5px auto;" > <a href="Core CommonJS System Layer v0.5.png" target="_new"><img src="Core CommonJS System Layer v0.5.png" width="650" height="461" /></a>
+			<div style="width: 650px; height: 461px; margin: 5px auto 5px auto;" > <a href="images/Core CommonJS System Layer v0.5.png" target="_new"><img src="images/Core CommonJS System Layer v0.5.png" width="650" height="461" /></a>
 			</div>
 			
 			<h2>The Context System</h2>
@@ -112,7 +113,7 @@ In the host initialization phase at least one context will be defined. The stand
 			<p class="EditorNote">I've put the Registry store in this system but it could be argued to implement a seperate Registry System like Context/Package/Module Systems</p>
 			
 			<h2>The Module Store System</h2>
-			<div style="float:right; overflow:auto; margin: 10px 0px 10px 10px;"><a href="Module Store System v0.5.png" target="_new"><img src="Module Store System v0.5.png" width="300" height="96" longdesc="Module Environment Layer in the Architecture" /></a></div>
+			<div style="float:right; overflow:auto; margin: 10px 0px 10px 10px;"><a href="images/Module Store System v0.5.png" target="_new"><img src="images/Module Store System v0.5.png" width="300" height="96" longdesc="Module Environment Layer in the Architecture" /></a></div>
 			<p>The CommonJS module system performs x main tasks:</p>
 			<ol>
 				<li>Provides module Factory Functions and dependency id's from the Module Stores to the core system on request</li>
@@ -166,7 +167,7 @@ In the host initialization phase at least one context will be defined. The stand
 			<p>The registerPlugin function returns an object describing access to the Loader API functions.</p>
 
 			<h1>Module Environment Layer</h1>
-			<div style="float:right; overflow:auto; margin: 10px 0px 10px 10px;"><a href="Module Environment Layer v0.5.png" target="_new"><img src="Module Environment Layer v0.5.png" width="200" height="181" longdesc="Module Environment Layer in the Architecture" /></a></div>
+			<div style="float:right; overflow:auto; margin: 10px 0px 10px 10px;"><a href="images/Module Environment Layer v0.5.png" target="_new"><img src="images/Module Environment Layer v0.5.png" width="200" height="181" longdesc="Module Environment Layer in the Architecture" /></a></div>
 			<p>To date,  client side JavaScript has generally been able to get away with something as  simple as the &lt;script&gt; tag and no standard way to do namespaces. On the  server, it's a bit different because you're more likely to use more libraries  and you can potentially load up a lot of code. Having a basic system for  loading code and encouraging the use of namespaces to avoid unintentional  interference will underlie everything else.</p>
 			<p>Minimal  requirements:</p>
 			<ul>
@@ -188,7 +189,7 @@ In the host initialization phase at least one context will be defined. The stand
 			
 			
 			<h1>Specific Loader System Layer</h1>
-<div style="float:right; overflow:auto; margin: 10px 0px 10px 10px;"><a href="Specific Loader Functions Layer v0.5.png"><img src="Specific Loader Functions Layer v0.5.png" width="200" height="181" longdesc="Specific Loader Functions Layer in the Architecture" /></a></div>
+<div style="float:right; overflow:auto; margin: 10px 0px 10px 10px;"><a href="images/Specific Loader Functions Layer v0.5.png" target="_new"><img src="images/Specific Loader Functions Layer v0.5.png" width="200" height="181" longdesc="Specific Loader Functions Layer in the Architecture" /></a></div>
 			<p>Todo!!<br />
 				<br />
 				<br />
@@ -202,7 +203,7 @@ In the host initialization phase at least one context will be defined. The stand
 			
 			
 			<h1>Transport System Layer</h1>
-<div style="float:right; overflow:auto; margin: 10px 0px 10px 10px;"><a href="Transport Protocols Layer v0.5.png"><img src="Transport Protocols Layer v0.5.png" width="200" height="181" longdesc="Transport Protocols Layer in the Architecture" /></a></div>
+<div style="float:right; overflow:auto; margin: 10px 0px 10px 10px;"><a href="images/Transport Protocols Layer v0.5.png" target="_new"><img src="images/Transport Protocols Layer v0.5.png" width="200" height="181" longdesc="Transport Protocols Layer in the Architecture" /></a></div>
 			<p>This layer defines methods/protocols for transmitting module source code, package definitions, registry information or repository information from a (web) server to a scripting host (like a browser page).</p>
 			<p>Currently defined specifications are for example: <a href="http://wiki.commonjs.org/wiki/Packages/AsynchronousDefinition">Packages/AsynchronousDefinition</a> or <a href="http://wiki.commonjs.org/wiki/Packages/Transport">Packages/Transport</a> for transporting package metadata from a remote server to a host.<br />
 				<br />
@@ -247,7 +248,7 @@ In the host initialization phase at least one context will be defined. The stand
 			<div style="clear:both"></div>
 		</div>
 		<div class="FooterAlgemeen">
-			<div class="copyright">(c)1998-2011 SSMT. Last modified:<!-- #BeginDate format:En2m -->10-Feb-2011  13:45<!-- #EndDate --></div>
+			<div class="copyright">(c)1998-2011 SSMT. Last modified:<!-- #BeginDate format:En2m -->10-Feb-2011  14:45<!-- #EndDate --></div>
 		</div>
 	</div>
 </div>
