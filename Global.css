@@ -36,7 +36,7 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	z-index: 0;
-	background-image: url(/Images/Sides1024.jpg);
+	background-image: url(template/Sides1024.jpg);
 	background-repeat: repeat-y;
 	background-position:center;
 }
@@ -66,7 +66,7 @@ body {
 
 .app1024 #PageHeader #Kop{
 	width: 1003px; /*	width: 766px; 980 */
-	background-image: url(/randompic.php?pagesize=1024);
+	background-image: url(template/TTC1024.jpg);
 }
 
 /*
@@ -327,7 +327,7 @@ body {
 
 .app1024 #Footer {
 /*	width: 100%; /* 1003-3 voor de rechter ruimte*/
-	background-image: url(/Images/Footer1024.jpg);
+	background-image: url(template/Footer1024.jpg);
 }
 
 .FooterAlgemeen{
