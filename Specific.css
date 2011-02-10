@@ -1,0 +1,271 @@
+.Content {
+	margin: 10px 20px 0px 20px;
+	padding-bottom: 20px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#4D4D4D;
+	text-align: justify;
+	counter-reset: chapter;      /* Create a chapter counter scope */
+}
+
+/* Standard styles following W3C standards */
+.Content html, .Content address, .Content blockquote, .Content body, .Content dd, .Content div, .Content dl, .Content dt, .Content fieldset, .Content form, .Content frame, .Content frameset, .Content h1, .Content h2, .Content h3, .Content h4, .Content h5, .Content h6, .Content noframes, .Content ol, .Content p, .Content ul, .Content center, .Content dir, .Content hr, .Content menu, .Content pre {
+	display: block
+}
+
+.Content li {
+	display: list-item;
+};
+
+.Content table {
+	display: table;
+}
+
+.Content tr {
+	display: table-row;
+}
+
+.Content thead {
+	display: table-header-group;
+}
+
+.Content tbody {
+	display: table-row-group;
+}
+
+.Content tfoot {
+	display: table-footer-group;
+}
+
+.Content col {
+	display: table-column;
+}
+
+.Content colgroup {
+	display: table-column-group;
+}
+
+.Content td, .Content th {
+	display: table-cell;
+}
+
+.Content caption {
+	display: table-caption;
+}
+
+.Content th {
+	font-weight: bolder;
+	text-align: center;
+}
+
+.Content caption {
+	text-align: center;
+}
+
+.Content h1 {
+	font-size: 2em;
+	margin: .67em 0;
+}
+
+.Content h2 {
+	font-size: 1.5em;
+	margin: .75em 0;
+}
+
+.Content h3 {
+	font-size: 1.17em;
+	margin: .83em 0;
+}
+
+.Content h4, .Content p, .Content blockquote, .Content ul, .Content fieldset, .Content form, .Content ol, .Content dl, .Content dir, .Content menu {
+	margin: 1.12em 0;
+}
+
+.Content p {
+	margin: 1.12em 0 0 0;
+}
+
+.Content ul, .Content ol {
+	margin: 0 0 0 0;
+}
+
+.Content h5 {
+	font-size: .83em;
+	margin: 1.5em 0;
+}
+
+.Content h6 {
+	font-size: .75em;
+	margin: 1.67em 0;
+}
+
+.Content h1, .Content h2, .Content h3, .Content h4, .Content h5, .Content h6, .Content b, .Content strong {
+	font-weight: bolder;
+}
+
+.Content blockquote {
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
+.Content i, .Content cite, .Content em, .Content var, .Content address {
+	font-style: italic;
+}
+
+.Content pre, .Content tt, .Content code, .Content kbd, .Content samp {
+	font-family: monospace;
+}
+
+.Content pre {
+	white-space: pre;
+}
+
+.Content button, .Content textarea, .Content input, .Content select {
+	display: inline-block;
+}
+
+.Content big {
+	font-size: 1.17em;
+}
+
+.Content small, .Content sub, .Content sup {
+	font-size: .83em;
+}
+
+.Content sub {
+	vertical-align: sub;
+}
+
+.Content sup {
+	vertical-align: super;
+}
+
+.Content table {
+	border-spacing: 2px;
+}
+
+.Content thead, .Content tbody, .Content tfoot {
+	vertical-align: middle;
+}
+
+.Content td, .Content th {
+	vertical-align: inherit;
+}
+
+.Content s, .Content strike, .Content del {
+	text-decoration: line-through;
+}
+
+.Content hr {
+	border: 1px inset;
+}
+
+.Content ol, .Content ul, .Content dir, .Content menu, .Content dd {
+	margin-left: 40px;
+}
+
+.Content ol {
+	list-style-type: decimal;
+}
+
+/* Zelf toegevoegd om li er standaard te laten uitzien */
+.Content li {
+	list-style-image: none;
+	list-style-type: disc;
+}
+
+.Content ol .Content ul, .Content ul ol, .Content ul ul, .Content ol ol {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.Content u, .Content ins {
+	text-decoration: underline;
+}
+
+.Content br:before {
+	content: "\A";
+}
+
+.Content :before, .Content :after {
+	white-space: pre-line;
+}
+
+.Content center {
+	text-align: center;
+}
+
+.Content :link, .Content :visited {
+	text-decoration: underline;
+}
+
+.Content :focus {
+	outline: thin dotted invert;
+}
+
+/*************************************/
+/* my own defined styles in .Content */
+/*************************************/
+
+.Content .Inhoudskop {
+	font-size:180%;
+	line-height:140%;
+	text-align:center;
+	margin: 0 0 1.12em 0;
+}
+
+.Content h1:before {
+    content: counter(chapter) ". ";
+    counter-increment: chapter;  /* Add 1 to chapter */
+}
+
+.Content h1, .Content .Subkop {
+	font-size:140%;
+	font-weight: normal;
+	line-height:140%;
+	margin: 1.12em 0 0 0;
+    counter-reset: section;      /* Set section to 0 */
+}
+
+.Content h2:before {
+    content: counter(chapter) "." counter(section) " ";
+    counter-increment: section;
+}
+
+.Content h2, .Content .SubSubkop {
+	font-size:120%;
+	line-height:120%;
+	margin: 1.12em 0 0 1.12em;
+    counter-reset: subsection;      /* Set section to 0 */
+}
+
+/* Let <p> start with less margin if after h2*/
+.Content h2 + p {
+	margin: 0.61em 0 0;
+}
+
+.Content h3:before {
+    content: counter(chapter) "." counter(section) "." counter(subsection) " ";
+    counter-increment: subsection;
+}
+
+.Content h3 {
+	font-size:100%;
+	line-height:120%;
+	margin: 1.12em 0em 0em 2.24em;
+	font-weight: bolder;
+}
+/* Let <p> start with less margin if after h3*/
+.Content h3 + p {
+	margin: 0.3em 0 0;
+}
+
+.Content .EditorNote:before {
+    content: "Editors Note: ";
+}
+.Content .EditorNote {
+	background-color: #FFC;
+	margin: 3px;
+	border: thin solid #000;
+	padding: 3px;
+}
