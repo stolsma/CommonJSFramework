@@ -273,3 +273,7 @@ body {
 	border: thin solid #000;
 	padding: 3px;
 }
+
+.Content .Glossary li {
+	margin-bottom: 1.12em;
+}

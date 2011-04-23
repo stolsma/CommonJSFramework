@@ -221,11 +221,54 @@ In the host initialization phase at least one context will be defined. The stand
 			
 			<h1>Glossary</h1>
 			<p class="EditorNote">Here all definitions need to be inserted. Please help with definitions!!!</p>
+			<ul class="Glossary">
+				<li><strong>autonomous</strong>: a property of some module systems where a  module, package, or name-space provides its own name and  thus is tightly coupled to that name both internally and  to other modules, packages, or name-spaces.  CommonJS  modules are not autonomous.  RequireJS permits modules to  be optionally autonomous, by way of the define call, so  that they can be bundled.  The Simple Modules strawman for  ECMAScript Harmony allows modules to be autonomous within  a file, but the top scope of a loaded module must be named  in the loading module, so both concepts are supported.<br />
+				</li>
+				<li><strong>bundle</strong>: a JavaScript file that can be downloaded and  executed by a web browser using script-injection to  asynchronously load one or more modules or packages of  modules.  Lode does not presently provide a bundling  feature, but it is in the design.</li>
+				<li><strong>catalog</strong>: a file on the web that describes a set of  packages.  Using a catalog reference in a package  configuration provides a level of indirection and permits  a package to be loosely coupled to its dependencies,  allowing the catalog to be updated independently of the  package.</li>
+				<li><strong>compile</strong>: to transform a module in a source language, like  CoffeeScript, and produce JavaScript.</li>
+				<li><strong>context</strong>: a JavaScript execution context is a container in  which a JavaScript event-loop can be executed,  guaranteeing that the array and object literal  constructors produce instances with the same particular  constructors, and providing the same primordial references  and global scope to all events.</li>
+				<li><strong>cross-domain</strong>: in a web browser, a URL that has a different  domain than the containing page.  Web browsers impose  restrictions on JavaScript's ability to interact with  cross-domain resources (as in limiting the ability to use  an XMLHttpRequest), and for an iframe's ability to  interact with the containing frame's JavaScript  references.</li>
+				<li><strong>define</strong>: a function name used by RequireJS and some  CommonJS proposals to permit a hand-written module to be  loaded with script-injection.  define() boilerplate,  where the last argument is a callback that receives  require, exports, and module as arguments, is  accepted by Lode to encourage interoperability with code  targetting RequireJS, but the dependency array and  optional module identifier arguments are ignored.</li>
+				<li><strong>dependencies</strong>: particuarly package dependencies, including  mappings, includes, and eventually alternate module loader  packages.  In a package configuration, dependencies are  uniformly represented by the right-hand side of a  mappings item, and the contents of an includes array.</li>
+				<li><strong>engine</strong>: A JavaScript embedding like NodeJS (&quot;node&quot;),  Rhino (&quot;rhino&quot;), an arbitrary web browser (&quot;browser&quot;),  or a particular web browser.  Engines provide different  classes of functionality so packages can be provided  alternate modules for different engines.</li>
+				<li><strong>entry-point</strong>: the first module executed in an instance of a  working-set of packages and modules.  The entry-point is  determined by the id in pkg.require.exec(id).</li>
+				<li><strong>exports</strong>: the public API of a module, represented as a  free-variable in a module, or returned by a module.</li>
+				<li><strong>extension</strong>: the part of a file-name after the last dot,  &quot;.&quot;, that is presently the only mechanism for  communicating to a loader whether and how a module file  should be loaded or compiled.</li>
+				<li><strong>factory</strong>: a function that executes a module.  Module  factories are called by a module loader on the first  occasion a module is required.  Having a factory permits a  module to be executed or instantiated independently of  loading.</li>
+				<li><strong>free variable</strong>: a variable that is not bound in a lexical  scope and presumed to be inherited from a parent scope,  like the primordials, and other variables injected into  modules like require and exports.</li>
+				<li><strong>identifier</strong>: a string that corresponds to a module in the  module-name space of a package.  Identifiers are  lower-case names using hyphens to delimit words, organized  into subtrees with slash, &quot;/&quot;, delimiters.  Identifiers  are either top-level or relative depending on whether or  not they begin with one of &quot;./&quot; or `&quot;../&quot;.</li>
+				<li><strong>include</strong>: a type of dependency that gets &quot;mixed-in&quot; with  the module name space of the containing package.</li>
+				<li><strong>library</strong>: a directory called &quot;lib&quot; by convention in any  of a package's roots containing modules and directories of  modules that get inducted into the top-level module  name-space of a package.</li>
+				<li><strong>link</strong>: a module identifier in one package that corresponds  to a module identifier in a dependency package.</li>
+				<li><strong>load</strong>: as distinct from execution, loading asynchronously  provides a module factory to a loader, sometimes for a  single module, sometimes as part of a bundle of modules or  packages.  Only when all of the modules and packages in a  working-set have been loaded can any module in that  working set be executed because a require call in any  module must be able to return the exports of the requested  module in the same turn of the event-loop.</li>
+				<li><strong>loader options</strong>: an object that configures a module loader  to use particular roots in each of the loaded packages,  for example, for debug mode in a browser, or for  deployment in Node.  Different options result in different  modules being used if a package provides alternate  versions of modules.</li>
+				<li><strong>loader</strong>: a device that asynchronously loads packages and  modules, permitting them to eventually be synchronously  executed.</li>
+				<li><strong>main (package configuration)</strong>: in the context of a  particular package, the main module is identified by &quot;&quot;.  Whether a package has a main module and what file  corresponds to the main module identifier is the &quot;main&quot;  property of the package's configuration.</li>
+				<li><strong>main (require)</strong>: In the context of executing a package, the  &quot;main&quot; module is the entry-point for the execution of a  working-set of packages and modules.  In the scope of any  module, require.main is the module object in the scope  of the main module.</li>
+				<li><strong>mapping</strong>: a kind of dependency where the top-level module  name-space of an external package gets integrated into a  sub-tree of the dependent package's name-space.</li>
+				<li><strong>module</strong>: a file that has its own, sovereign lexical scope  and may require and provide exports from and to other  modules using the require and exports free variables,  and the return statement.  A module receives a module  free variable with meta-data like the module's identifier.</li>
+				<li><strong>name-space</strong>: the module identifier name-space is a set of  top-level identifiers scoped to a package, where some  identifiers are linked to modules within the package, and  others to dependency packages.</li>
+				<li><strong>package configuration</strong>: the package.json of a package,  containing its configuration information, particularly how  it should be linked to other packages and described to  package registries and catalogs.</li>
+				<li><strong>package</strong>: a directory or archive of a directory with a  package configuration file at its root (package.json),  various roots, libraries within roots, and modules within  libraries.</li>
+				<li><strong>primordial</strong>: any of the objects intrinsic to a context like  the global object and Object and Array constructors.</li>
+				<li><strong>registry</strong>: a web service for searching, downloading, and  posting packages.</li>
+				<li><strong>relative</strong>: a class of module identifier that begins with  &quot;./&quot; or &quot;../&quot; indicating that the corresponding module  should be resolved relative to the current module's  top-level identifier.</li>
+				<li><strong>require</strong>: a function provided as a free-variable to  CommonJS modules that permits the module to acquire the  exports of another module.</li>
+				<li><strong>root</strong>: the top-most directory of a package is the root,  but there may be others depending on the loader options,  for example, including the {root}/engines/{engine}  directory of any other root and configured engine name  like node or browser, and the {root}/debug directory  of any other root if a loader is configured for debugging.  Roots are prioritized from most to least specific and  searched for resources, particularly but not limited to  library directories where modules are found.</li>
+				<li><strong>script-injection</strong>: a technique for asynchronously  downloading and executing potentially cross-domain  JavaScript in a web browser.</li>
+				<li><strong>SES5</strong>: secure ECMAScript 5 is a subset of ECMAScript 5 (a  specification for the class of languages including  JavaScript) where all of the primordials are immutable (by  virtue of being frozen) and other invariants are  maintained to prevent the lexical scope and primordials in  any event from being suberted by another event, and to  permit mutually suspicious programs to run in the same  event loop without interference except possibly  denial-of-service.</li>
+				<li><strong>sovereign</strong>: pertaining to a lexical-scope, means that a  module is not coupled to other modules using a shared  lexical scope, and thus is safe from contamination and  pollution of other modules.  CommonJS modules have  sovereignty over their lexical scope.  Pertaining to the  module identifier-name space, means that a package is not  implicitly coupled to other packages, using a shared  package name-space, and thus is safe from contamination  and polution of other packages.  Lode packages have  sovereignty over their module name-space, but may elect to  be coupled to specific packages through includes and  mappings.  Node packages do not have sovereignty; they are  subject to the module identifier name-spaces provided to  them by Node and other packages.  NPM makes an effort to  guarantee consistent linkage to dependencies, but does not  provide sovereignty.  Narwhal packages do not have  sovereignty; they are subject to the module identifier  name spaces of all installed packages.</li>
+				<li><strong>top-level</strong>: as distinguished from &quot;relative&quot;, a top-level  module identifier is one that does not start with a &quot;./&quot;  or a &quot;../&quot;, indicating that a module is linked relative  to the root of the module name-space, &quot;&quot;.</li>
+				<li><strong>turn</strong>: the execution of an event in JavaScript. The  JavaScript event-loop arranges for events to be executed in turns, with only one stack of execution at any time.</li>
+				<li><strong>working set</strong>: given a package, the transitive closure of  all packages that any package in the set depends upon.  Given a module, the transitive closure of all modules that  any module in the set requires.  Because require must be  able to return an exports object in the same turn, and  if loading must be asynchronous, the working set of  CommonJS modules must be loaded before any module in the  working set is executed or instantiated.</li>
+			</ul>
 			
 			
 			<h1>References</h1>
 			<ul>
 				<li>Text has been copied from the CommonJS site. <a href="http://commonjs.org/" target="_new">http://www.commonjs.org/</a></li>
+				<li>Most of the glossary items come from <a href="../https://github.com/kriskowal/lode/blob/master/README.md">Kris Kowal</a></li>
 			</ul>
 			<br />
 			<br />
@@ -248,7 +291,7 @@ In the host initialization phase at least one context will be defined. The stand
 			<div style="clear:both"></div>
 		</div>
 		<div class="FooterAlgemeen">
-			<div class="copyright">(c)1998-2011 SSMT. Last modified:<!-- #BeginDate format:En2m -->10-Feb-2011  14:45<!-- #EndDate --></div>
+			<div class="copyright">(c)1998-2011 SSMT. Last modified:<!-- #BeginDate format:En2m -->10-Feb-2011  20:54<!-- #EndDate --></div>
 		</div>
 	</div>
 </div>
